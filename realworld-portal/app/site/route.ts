@@ -26,13 +26,26 @@ function rewriteToLocal(html: string) {
   return out;
 }
 
-export async function GET() {
+export async function GET(req: Request) {
   try {
-    const filePath = path.resolve(process.cwd(), "..", "therealworld.net", "index.html");
-    const html = await fs.readFile(filePath, "utf8");
-    const processed = rewriteToLocal(html);
-    return new Response(processed, {
-      headers: { "content-type": "text/html; charset=utf-8" },
+    const url = new URL(req.url);
+    const mode = url.searchParams.get("mode");
+    const preferRaw = mode === "raw";
+
+    const staticPath = path.resolve(process.cwd(), "public", "site-static");
+    let html: string;
+    let fromStatic = false;
+    try {
+      html = await fs.readFile(staticPath, "utf8");
+      fromStatic = true;
+    } catch {
+      const exported = path.resolve(process.cwd(), "..", "therealworld.net", "index.html");
+      html = await fs.readFile(exported, "utf8");
+    }
+
+    const body = preferRaw || fromStatic ? html : rewriteToLocal(html);
+    return new Response(body, {
+      headers: { "content-type": "text/html; charset=utf-8", "cache-control": "no-store" },
     });
   } catch (e: any) {
     return new Response(e?.message || "Failed to load", { status: 500 });
