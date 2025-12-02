@@ -1,0 +1,8 @@
+/*
+ * Star (hero-icons/Star@0.0.28)
+ *
+ * Learn More: https://www.framer.com/asset-urls
+ */
+
+export * from "https://framerusercontent.com/modules/OPYrFj4m6a5bQKMUxTOS/JyGuvHd07oXaZTtLbz2c/Star.js"
+export { default } from "https://framerusercontent.com/modules/OPYrFj4m6a5bQKMUxTOS/JyGuvHd07oXaZTtLbz2c/Star.js"

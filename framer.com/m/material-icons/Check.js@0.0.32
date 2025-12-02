@@ -1,0 +1,8 @@
+/*
+ * Check (material-icons/Check@0.0.32)
+ *
+ * Learn More: https://www.framer.com/asset-urls
+ */
+
+export * from "https://framerusercontent.com/modules/GBcu6s6ApivYCKD07sRT/OGrYaZPQQ5rBWCs208ew/Check.js"
+export { default } from "https://framerusercontent.com/modules/GBcu6s6ApivYCKD07sRT/OGrYaZPQQ5rBWCs208ew/Check.js"

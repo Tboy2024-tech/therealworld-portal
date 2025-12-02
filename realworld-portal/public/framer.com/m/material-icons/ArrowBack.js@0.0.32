@@ -1,0 +1,8 @@
+/*
+ * ArrowBack (material-icons/ArrowBack@0.0.32)
+ *
+ * Learn More: https://www.framer.com/asset-urls
+ */
+
+export * from "https://framerusercontent.com/modules/7f4F0YqEqbqnMwwSh3pl/kjNN1DH1zat5PJVvmJ4g/ArrowBack.js"
+export { default } from "https://framerusercontent.com/modules/7f4F0YqEqbqnMwwSh3pl/kjNN1DH1zat5PJVvmJ4g/ArrowBack.js"

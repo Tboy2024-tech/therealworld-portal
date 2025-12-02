@@ -1,0 +1,9 @@
+const n = (e) => {
+    return e;
+};
+let t;
+var o = (e) => {
+    return (t || (t = n(e.createElement("path", {d: "M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"}), "CircleOutlined")),t);
+};
+const __FramerMetadata__ = {exports: {default: {type: "reactComponent", slots: [], annotations: {framerContractVersion: "1"}}, __FramerMetadata__: {type: "variable"}}};
+export { __FramerMetadata__, o as default };

@@ -1,0 +1,8 @@
+/*
+ * Telegram (material-icons/Telegram@0.0.32)
+ *
+ * Learn More: https://www.framer.com/asset-urls
+ */
+
+export * from "https://framerusercontent.com/modules/a0k1dNYjxOXNtBfFg737/LT3YcBtDT3RvaUbdADsv/Telegram.js"
+export { default } from "https://framerusercontent.com/modules/a0k1dNYjxOXNtBfFg737/LT3YcBtDT3RvaUbdADsv/Telegram.js"

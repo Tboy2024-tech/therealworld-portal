@@ -1,0 +1,254 @@
+
+        import * as Framer from "framer";
+import * as React from "react";
+import { createPortal } from "react-dom";
+import * as ReactDOM from "react-dom/client";
+
+        const routes = {bP8USP8IE: {elements: {aT9uxYZk3: "3-1", ek3ff3JMy: "1", ez6DmFgld: "courses", LAU8f3i6K: "features", o_tTbB1Fo: "1-1", on3X6PSj3: "testimonials", rPlFJxYrr: "3", TN_M9trtR: "interviews", ye6hGJOro: "2", YGiW7QvnS: "2-1"}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/v7HrQMfyRyPdR3QjTzT2/02EcYtRMHC98jqnpByxM/bP8USP8IE.js")), path: "/"}, augiA20Il: {elements: {IQVtNw2lo: "testimonials", j5iTE0pls: "courses", ScZoaMpwK: "professors", VNDvE0btK: "philosophy", XKZ5Rf87e: "access"}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/XbwTfEtqrvMzd5nTBNW6/BzEUW9Q2entxz053pQ35/augiA20Il.js")), path: "/old-home"}, ewLy4Bgne: {elements: {ExYl32tz2: "philosophy", l3LRNhHZw: "access", WPto_s2H9: "courses"}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/RGlHeciXXD62gC6V2Hr6/X2dIdITKrZRUsdPvzNJD/ewLy4Bgne.js")), path: "/join-the-real-world"}, e0cF2Y8_P: {elements: {}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/yhyBE0se8MD6acXQjYeI/91wkFV5g6ytDXwjeZrNk/e0cF2Y8_P.js")), path: "/404"}, bYBSsaPsf: {elements: {bAuyQTIgx: "4", CueCE9rRh: "4-1", D2rHgE9P6: "video", dX1brNKOC: "5-1", EDXGF6_Cm: "3", gUR7W6rUX: "5", iYV_2gMpm: "timeline-1", LkA64fQxv: "3-1", mroFgT2Lz: "2-1", ryTMblrsW: "2", U6wgalvtv: "1", V94vhLb8C: "1-1", VypPou_jM: "timeline"}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/QCRQ6y34rhMv4aM93DHs/JVmlvTXrPeoOJGP7HVLj/bYBSsaPsf.js")), path: "/the-real-world-copywriting"}, K95snjKw5: {elements: {aDd_cvr4i: "timeline-1", gC5gFLrrU: "2", hj5kcqnkt: "timeline", jKuvCrgO0: "5-1", jtBXYl3id: "1", jZQP6js1I: "2-1", kLsLNfjSO: "3", mQrhPQcVm: "5", npuoRa9BD: "4-1", OunN6xnIW: "1-1", viqP6g9YG: "4", ZxzOUOTaU: "3-1"}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/0OTHzzaDYh5HTTBHt629/oMU52KPACCcepcuVhrPX/K95snjKw5.js")), path: "/the-real-world-freelancing"}, TuhmUQQdD: {elements: {dXElNsLbH: "2-1", hVvtKsJFk: "timeline", JsmJl4OJy: "5", LsuZFiOAn: "5-1", o_BQjNYer: "3-1", Ok0C3uMKO: "2", pDwaRI8Kd: "1", qncW2gVLQ: "4-1", QtOIDR9O9: "timeline-1", upNyJfo6M: "4", VmwdSKbOI: "video", wYdWqMWlo: "3", zirnVyU6R: "1-1"}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/OnD9AXN9MZ3jm6zkqxE4/d4l0cbDvmdiaSOeV3Ppm/TuhmUQQdD.js")), path: "/the-real-world-ecommerce"}, PWxY3jMfx: {elements: {A5tYdo42j: "4-1", ELWocOmm7: "timeline-1", hggpEeCk4: "5", kp1WQDVZO: "1", m5NyqEoTw: "video", mVshD_b6_: "1-1", nhROuQ4gs: "5-1", qBYVP0GIL: "timeline", ubbHlLuzZ: "4", VupRIpMSE: "2", wRMMAvJ2u: "3", wx9GUBT3r: "2-1", YqsOchzyj: "3-1"}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/nHzBeyQHJAjxKq9fsfGF/wMrm49M8H4aNAWZwgB8S/PWxY3jMfx.js")), path: "/the-real-world-stocks"}, xMNC2tCt4: {elements: {aTxDG8fsz: "4-1", D8Prm_XlT: "4", Fyd7r5LvQ: "timeline-1", GEXAGFI9R: "1-1", Hhy_RpoTs: "3", k8CYQ5dzJ: "5", oOBA8aydN: "2", P7YZsZ399: "timeline", r1vRQh6wF: "5-1", SNfIGxp_C: "3-1", taJmSeqog: "1", y5SVaglAA: "2-1", Z2DTg7Waq: "video"}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/o6WiZSC3ulcIxDNMYQ6S/lPKVk69ZM4OUaLXEyzIE/xMNC2tCt4.js")), path: "/the-real-world-finance"}, F_WXTQ95x: {elements: {a_Stcl0ms: "5", EacErqJfy: "1", fE7cZufpG: "2-1", HnokfzcM2: "1-1", k8zw58NJ5: "3-1", lapZTccPX: "video", mUW8l9Sx6: "2", O6fkkvgO_: "3", rSDHPmzi9: "4-1", srOOprJX2: "timeline", VLK3M113Z: "4", wNzDOBOwT: "5-1", xWXlG1MsW: "timeline-1"}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/91MiwFAQ3mDk1EG8wQ7p/Mx8wV4ZWku4XtO1soYsJ/F_WXTQ95x.js")), path: "/the-real-world-ugc"}, YI28v3p7O: {elements: {BFZI9Jwhi: "4", ECgYmQNQE: "timeline-1", fZL9efp_J: "1", GLEQ0Hs2L: "3-1", hhdkegqwz: "timeline", lptu7wrFB: "video", lVgERiw7q: "5-1", p_JfeV1Zv: "3", T99eUTvcI: "1-1", uEMgBSSY7: "5", w6NtZhqJy: "2-1", wC8XsjJi1: "4-1", WZZiQ2A0g: "2"}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/obS56INeJMqGYjjXan0U/VXZUhqUGIL7lqGNrhzyb/YI28v3p7O.js")), path: "/the-real-world-content-creation"}, KQZqFmlTp: {elements: {BMfQzq12o: "timeline-1", BVLmqCnG3: "timeline", cGf7Mni0_: "4-1", gzrrUgjCJ: "3-1", hz7QvqtLd: "2", i_0PWCQWI: "5", IWyBuylTu: "5-1", JviSnQkMn: "video", OBde3X1PG: "2-1", RSeMLA7W2: "3", SLnnTwAf7: "4", wDDjikcEM: "1-1", wN4PXB7KJ: "1"}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/mGHR8N49b17gFt4bABMN/8x1tHhw0uw196aw5nJit/KQZqFmlTp.js")), path: "/the-real-world-sm"}, su6YW5nss: {elements: {}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/uYoOYzRQfYlTswDawD7Q/SqYPUB01cElZGeBs6CM6/su6YW5nss.js")), path: "/newsletter"}, hlgolfIPR: {elements: {}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/mFrLqpxP6QyarRfdhzJw/1k8D2W9d1BB5Mgr0elMj/hlgolfIPR.js")), path: "/fireblood"}, Ck2LuLA6d: {elements: {DeKrbQ6gX: "2", HBfS3JcmN: "3", VJSH9qBVX: "1"}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/mv0E0UbvQrXZWrkisulg/nOUBbF35ZXAQADZ0Z1GT/Ck2LuLA6d.js")), path: "/join-the-real-world-old"}, LIvNUIfV5: {elements: {}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/yWgfmfPyUhawho38021E/RTkQONzziKmPt3vVqNLl/LIvNUIfV5.js")), path: "/contact-us"}, DWFanjjTa: {elements: {}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/aijXpwt2isWAy73wIxOK/KRA3Sb5se5WwtCY700QG/DWFanjjTa.js")), path: "/urgent-warning"}, aJs5ObfC2: {elements: {}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/wfxU1cwGosAecKSGcLLR/aMeNmYSToZvqZX26NuiK/aJs5ObfC2.js")), path: "/final-warning"}, MJhhcg1zT: {elements: {}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/QW3mK2SaKCHzcf4JPyFo/JKwdwr7AbSCaltcUKlL8/MJhhcg1zT.js")), path: "/about-andrew-tate"}, WI8jUU1Pt: {elements: {}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/L468PJNLVH2dOVcstjVK/CRrjrSSFXJfKaxeOVUWt/WI8jUU1Pt.js")), path: "/about-tristan-tate"}, ZZTUI7ERn: {elements: {}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/OuPw2oxVChnmTsOCFvK0/oOWZBjIENaY8CoiIEHwK/ZZTUI7ERn.js")), path: "/terms-and-conditions"}, UrJwZiu8D: {elements: {}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/YUrmtaH0UPJg4kXaTiMF/XM5HluZInMaQ3sBKp74q/UrJwZiu8D.js")), path: "/terms-and-conditions-new-year"}, k4d0rCq5h: {elements: {}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/5KLENRYFKItdopzxnSXf/fCLWR3U7T7FDOFJjUEaL/k4d0rCq5h.js")), path: "/privacy-policy"}, IiIT0MQuC: {elements: {}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/A0iKB1EoI1kcEngOXknu/5hXGPoycLEFhchanQUmx/IiIT0MQuC.js")), path: "/social-media"}, PC_RFRj88: {elements: {}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/FUnf7a7o2zmUcHjNHypi/vos2PsyWMOfjV6CeEZ9o/PC_RFRj88.js")), path: "/content-creation"}, dcKftzRVO: {elements: {lFHL1gILU: "1", QIXLebeZX: "2", VVzoNl_lR: "3"}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/gyKdfpnlHNJAAiE9Zm2n/fdBxgE5Xwy8esHx4czBi/dcKftzRVO.js")), path: "/gift-old"}, Nq4WVg_TS: {elements: {sCNc5mzpK: "2", YQpeX6Dsl: "3", Z5B8T29Z6: "1"}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/tFQkfNbSvasctDS0Tcjt/YGbwFsQmuAUELZbkDNcA/Nq4WVg_TS.js")), path: "/gift"}, CMrDEGbTw: {elements: {FMIeKbR2S: "end", LXbq8msty: "start"}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/IZS89N6PkNPtGi9FfnIr/r8LmELvPegerXF2q2Pl7/CMrDEGbTw.js")), path: "/new-year"}, EAEToimzg: {elements: {XV2OvNmMS: "start", zTF_qLaK1: "end"}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/xVdWuqzkrYmZfFhXYXBh/LoIVYTjyq3Avg1KaI1Nr/EAEToimzg.js")), path: "/newyear"}, pA0vErLC6: {elements: {cT0MlCH6L: "3", dIkX8Oxwk: "3-1", eGw4z4V2R: "testimonials", EsG9ayRRg: "1-1", hFzyIEH5M: "start", OJeJ7cNqk: "2-1", qvLlY9NjY: "1", RenuH9Egq: "interviews", upQLDA6UZ: "features", vnl4y84cl: "2", XeK6eUCrm: "courses"}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/R9cojS36t8hY3yAteFyV/YbQnWBLSsaRiTfqrJvdF/pA0vErLC6.js")), path: "/join"}, KQh9h2xoY: {elements: {acu3TGvQI: "1-1", BlHELR4FS: "2-1", dBVJgiRfr: "3-1", nMVQJA24c: "testimonials", OqWWPfShu: "2", PAuiDOcNS: "interviews", sm_Um7QoA: "courses", syx4qfq29: "1", xH70Zr4k0: "features", Yl1reWZKs: "3"}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/uPKdmxBPtIEJTo9n0TST/FUhhG1BvSm4KVuMIOUUu/KQh9h2xoY.js")), path: "/home"}, J_1Wc8igk: {elements: {Ahl6s4Db2: "courses", AvYwOfRBu: "features", bdhMo55vF: "2-1", d8mCzf_f8: "3", eN7ECHQHq: "1", JwAeTHgGB: "3-1", Oe4nvbPLj: "1-1", pa5udrbAC: "interviews", R7pyLWXKY: "testimonials", T9xkWbc2S: "2"}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/jM4qhus1eYkdfpqqzYPT/tUurVKtD4IUwz11hxrGJ/J_1Wc8igk.js")), path: "/checkout"}, kcn9Q7CLD: {elements: {O2Z5ot13v: "end", rXk_kLNfP: "start"}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/2oVVQ6XGexISwK7szrOs/Fs26nWMUg372njJSefRW/kcn9Q7CLD.js")), path: "/ai"}, x1bcXRqmI: {elements: {otN2RmNCE: "start", yLJqIgGmh: "end"}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/JcxzR69hkzKebxhtXdGP/mxEiFq4GY50L8XLhxOnv/x1bcXRqmI.js")), path: "/ai-campus"}, TqqFAxQOP: {elements: {JiG3zgq9y: "end", kqUyEIUrZ: "start"}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/l63fFPUuyBqFWTQijnmy/FdneKrO2y97x0GlDxfO0/TqqFAxQOP.js")), path: "/last-spots"}, LRY3MZqpr: {elements: {n9fgVNTCX: "start", W0I3jNFKy: "end"}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/BiuHoqGnjXJi9LxmkJnj/CV5lJgNMSqQsUNO2T8E0/LRY3MZqpr.js")), path: "/champions"}, nPge2PXAT: {elements: {NZicSGSC4: "end", z96GqjR_M: "start"}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/S1Abjm2AhpHKr8KKO7CH/CGdRbj2J5xv69TFwvUUL/nPge2PXAT.js")), path: "/champion"}, ynwghcjMM: {elements: {nb3T9v3lB: "courses"}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/wHMRcyJoNOYk86srsITn/tmSX8ibioo36Efc6NqB1/ynwghcjMM.js")), path: "/login"}, lso6RnBys: {elements: {}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/3GGolvzZd48TUtDHG5Ed/mLtwjuYLOVQ04ySoLh5O/lso6RnBys.js")), path: "/news"}, Y2F5rlPfA: {elements: {}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/08lj5RoU6qTGqfDRLsOD/fOPZAIxGdx9ejs0lkqzb/Y2F5rlPfA.js")), path: "/success-stories"}, mvp9VaOLG: {elements: {}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/l9qqRd2qN97DOXmTlJHc/SFszLWX1V3nSi6QB1R2k/mvp9VaOLG.js")), path: "/lambogiveaway"}, vLqksX1ya: {elements: {}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/3oEqo3D1TswvZ8e0iJsa/rvE5ybU3w9STZDk6M3ig/vLqksX1ya.js")), path: "/page"}, JD_rrbbbw: {elements: {OsCEKWgcK: "end", xMAMEcrKk: "start"}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/w9A1lSfPJ23V0gewLnKn/0OhlF89Q0znzuqQGd4pk/JD_rrbbbw.js")), path: "/ai-backup"}, vhIM1wUtM: {elements: {dmThmqIBQ: "trigger2", fZZDxTrzL: "professions", JMlClZCQo: "trigger", MwTKgAiV8: "features", n2GRnO_jY: "student-wins", R60lEjuna: "5", TFt7oNcpQ: "2", UW01NVSeT: "1", UxodAj4IJ: "start", XEbJ8PLOn: "end", ZjEVB2N8K: "3"}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/lobKUyMV1TSbB9Blzdod/ly5mLJTQzJUpaLzlynVP/vhIM1wUtM.js")), path: "/final-spots"}, lavCSWp_H: {collectionId: "C1MiG4jy5", elements: {}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/QiA6aIwgqB5thGDwS0CL/SvCFyKn6X7voip5tPNgr/lavCSWp_H.js")), path: "/news/:LXPPb0mj_"}, iwAEsgwy5: {collectionId: "c6GxwMklE", elements: {fMRROUeY1: "testimonials", TXjZm1PMS: "interviews"}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/9gh9OifI2uwEgWiu7qmk/X2XjRj0e9NkPRqf49VXa/iwAEsgwy5.js")), path: "/success-stories/:jB62hjf6W"}}
+
+        const locales = [{code: "en", id: "default", name: "English", slug: "", textDirection: "ltr"}]
+        const collectionUtils = {C1MiG4jy5: async () => (await import("https://framerusercontent.com/modules/2uwaQiHEyHbBIwomOOde/XCi2WViOTMQjft2BA2GL/C1MiG4jy5.js"))?.["utils"], c6GxwMklE: async () => (await import("https://framerusercontent.com/modules/yRa8H2KS0hYqDuLvsg6c/Ko1gPMaKOQd3iytQo1Ig/c6GxwMklE.js"))?.["utils"]}
+        const framerSiteId = "2fe6759e8870f63b5c4f5552dbf5af1b6cd1d4cb2d7dac751826e0218f1e9f54"
+        
+
+        export async function getPageRoot({ routeId, pathVariables, localeId }) {
+            const rootPreload = routes[routeId].page.preload()
+
+            const content = React.createElement(
+                Framer.PageRoot,
+                {
+                    isWebsite: true,
+                    routeId,
+                    pathVariables,
+                    routes,
+                    collectionUtils,
+                    framerSiteId,
+                    notFoundPage: Framer.lazy(() => import("https://framerusercontent.com/modules/yhyBE0se8MD6acXQjYeI/91wkFV5g6ytDXwjeZrNk/e0cF2Y8_P.js")),
+                    isReducedMotion: undefined,
+                    localeId,
+                    locales,
+                    preserveQueryParams: undefined,
+                    siteCanonicalURL: "https://therealworld.net",
+                    EditorBar: 
+            typeof window !== "undefined" ? (() => {
+                const isBot = /bot|-google|google-|yandex|ia_archiver|crawl|spider/iu.test(navigator.userAgent)
+                if (isBot) {
+                    console.log("[Framer On-Page Editing] Unavailable because navigator is bot")
+                    return
+                }
+
+                return Framer.lazy(async () => {
+                    const dependencies = {
+                        __version: 2,
+                        framer: {
+                            useCurrentRoute: Framer.useCurrentRoute,
+                            useLocaleInfo: Framer.useLocaleInfo,
+                            useRouter: Framer.useRouter,
+                        },
+                        react: {
+                            createElement: React.createElement,
+                            Fragment: React.Fragment,
+                            memo: React.memo,
+                            useCallback: React.useCallback,
+                            useEffect: React.useEffect,
+                            useRef: React.useRef,
+                            useState: React.useState,
+                        },
+                        "react-dom": { createPortal },
+                    }
+
+                    window.__framer_editorBarDependencies = dependencies
+
+                    const { createEditorBar } = await import("https://framer.com/edit/init.mjs")
+                    return {
+                        default: createEditorBar(),
+                    }
+                })
+            })() : undefined
+        ,
+                    adaptLayoutToTextDirection: false,
+                    
+                }
+            )
+
+            const contentWithFeaturesContext = React.createElement(
+                Framer.LibraryFeaturesProvider,
+                {
+                    children: content,
+                    value: {advancedSpamProtection: true, customCodeSiteSettings: false, editorBarDisableFrameAncestorsSecurity: false, motionDivToDiv: false, onPageLocalizationSupport: false, onPageMoveTool: false, synchronousNavigationOnDesktop: false, yieldOnTap: false}
+                }
+            )
+
+            const contentWithGracefullyDegradingErrorBoundary = React.createElement(Framer.GracefullyDegradingErrorBoundary, {
+                children: contentWithFeaturesContext
+            })
+
+            
+            const page = React.createElement(Framer.PageEffectsProvider, {
+                children: contentWithGracefullyDegradingErrorBoundary,
+                value: {global: {enter: {mask: {angle: 180, type: "wipe", width: "100%"}, opacity: 1, rotate: 0, rotate3d: false, rotateX: 0, rotateY: 0, scale: 1, transition: {damping: 30, delay: 0, duration: 0.4, ease: [0.27, 0, 0.51, 1], mass: 1, stiffness: 400, type: "tween"}, x: "0px", y: "0px"}}, routes: {}}
+            })
+
+            // We don't want the initial render to immediately have to suspend.
+            await rootPreload
+            return page
+        }
+
+        const isBrowser = typeof document !== "undefined"
+        if (isBrowser) {
+            window.__framer_importFromPackage = (packageAndFilename, exportIdentifier) => () => {
+                return React.createElement(Framer.ErrorPlaceholder, { error: 'Package component not supported: "' + exportIdentifier + '" in "' + packageAndFilename + '"' })
+            }
+
+            window.__framer_events = window.__framer_events || []
+
+            // Fallback support for stack gaps
+            Framer.installFlexboxGapWorkaroundIfNeeded()
+
+            const container = document.getElementById("main")
+            // We know that #main is parsed before this script, so we don't need to wait for DOMContentLoaded or similar events.
+            if ("framerHydrateV2" in container.dataset) main(true, container)
+            else main(false, container)
+        }
+
+        function track() {
+            if (!isBrowser) return
+            window.__framer_events.push(arguments)
+        }
+
+        async function main(shouldHydrate, container) {
+            function handleError(error, errorInfo, recoverable = true) {
+                if (error.caught || window.__framer_hadFatalError) return // we already logged it
+
+                const componentStack = errorInfo?.componentStack
+                if (recoverable) {
+                    console.warn("Caught a recoverable error. The site is still functional, but might have some UI flickering or degraded page load performance. If you are the author of this website, update external components and check recently added custom code or code overrides to fix the following server/client mismatches:\n", error, componentStack)
+                    // we only want to collect 1%, because this can be quite noisy (floods the data pipeline)
+                    if (Math.random() > 0.01) return
+                } else {
+                    console.error("Caught a fatal error. Please report the following to the Framer team via https://www.framer.com/contact/:\n", error, componentStack)
+                }
+                track(recoverable ? "published_site_load_recoverable_error" : "published_site_load_error", {
+                    message: String(error),
+                    componentStack, // componentStack is more useful
+                    stack: componentStack ? undefined : error instanceof Error && typeof error.stack === "string" ? error.stack : null,
+                })
+            }
+
+            try {
+                let routeId, localeId, pathVariables, breakpoints
+                if (shouldHydrate) {
+                    const routeData = JSON.parse(container.dataset["framerHydrateV2"])
+                    routeId = routeData.routeId
+                    localeId = routeData.localeId
+                    pathVariables = routeData.pathVariables
+                    breakpoints = routeData.breakpoints
+
+                    routeId = Framer.patchRoutesForABTesting(routes, routeId) // Prioritize optimized route id to avoid flickering in browsers not supporting the server-timing header (Safari older than 16.4)
+                } else {
+                    Framer.patchRoutesForABTesting(routes, undefined) // This must happen before inferInitialRouteFromPath
+
+                    
+                    const routeData = Framer.inferInitialRouteFromPath(routes, decodeURIComponent(location.pathname), true, locales)
+                    routeId = routeData.routeId
+                    localeId = routeData.localeId
+                    pathVariables = routeData.pathVariables
+                    
+                }
+
+                const pagePromise = getPageRoot({ routeId, localeId, pathVariables })
+
+                
+if (typeof window !== "undefined") {
+    void (async () => {
+        const route = routes[routeId]
+
+        const defaultLocaleId = "default"
+        const framerLocale = locales.find(({ id }) => !localeId ? id === defaultLocaleId : id === localeId).code
+
+        let collectionItemId = null
+        if (route?.collectionId && collectionUtils) {
+              const utils = await collectionUtils[route.collectionId]?.()
+              const [slug] = Object.values(pathVariables)
+              if (utils && typeof slug === "string") {
+                  collectionItemId = (await utils.getRecordIdBySlug(slug, framerLocale || undefined)) ?? null
+              }
+        }
+
+        const resolvedDateTimeOptions = Intl.DateTimeFormat().resolvedOptions()
+        const timezone = resolvedDateTimeOptions.timeZone
+        const locale = resolvedDateTimeOptions.locale
+
+        // wait for the page to be activated before sending the pageview event
+        // https://developer.chrome.com/docs/web-platform/prerender-pages#impact-on-analytics
+        await new Promise((resolve) => {
+            if (document.prerendering) {
+                document.addEventListener("prerenderingchange", resolve, { once: true })
+            } else {
+                resolve()
+            }
+        })
+
+        window.__framer_events.push([
+            "published_site_pageview",
+            {
+                framerSiteId: framerSiteId ?? null,
+                version: 2,
+                routePath: route?.path || "/",
+                collectionItemId,
+                framerLocale: framerLocale || null,
+                webPageId: route?.abTestingVariantId ?? routeId,
+                abTestId: route?.abTestId,
+                referrer: document.referrer || null,
+                url: window.location.href,
+                hostname: window.location.hostname || null,
+                pathname: window.location.pathname || null,
+                hash: window.location.hash || null,
+                search: window.location.search || null,
+                timezone,
+                locale,
+            },
+            "eager"
+        ])
+
+        // Yield to avoid blocking the main thread with the user code
+        await Framer.yieldToMain({ priority: "background", ensureContinueBeforeUnload: true, continueAfter: "paint" })
+
+        document.dispatchEvent(new CustomEvent("framer:pageview", {
+            detail: { framerLocale: framerLocale || null }
+        }))
+    })()
+}
+
+
+                const page = await pagePromise
+                if (shouldHydrate) {
+                    
+
+                    Framer.withPerformanceMarks("framer-rewrite-breakpoints", () => {
+                        Framer.removeHiddenBreakpointLayersV2(breakpoints)
+                        window.__framer_onRewriteBreakpoints?.(breakpoints)
+                    })
+
+                    
+
+                    const startTransition = React.startTransition
+                    startTransition(() => {
+                        Framer.markHydrationStart()
+                        if (true) Framer.turnOffReactEventHandling()
+                        ReactDOM.hydrateRoot(container, page, { onRecoverableError: handleError })
+                    })
+                } else {
+                    
+                    ReactDOM.createRoot(container, { onRecoverableError: handleError }).render(page)
+                }
+            } catch (error) {
+                handleError(error, undefined, false)
+                throw error
+            }
+        }
+
+        
+
+        
+    

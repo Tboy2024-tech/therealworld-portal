@@ -1,0 +1,8 @@
+/*
+ * CircleOutlined (material-icons/CircleOutlined@0.0.32)
+ *
+ * Learn More: https://www.framer.com/asset-urls
+ */
+
+export * from "https://framerusercontent.com/modules/tGIUfaeHFKcfnOQtYB9S/hHvLwH2pjV91o287LvmI/CircleOutlined.js"
+export { default } from "https://framerusercontent.com/modules/tGIUfaeHFKcfnOQtYB9S/hHvLwH2pjV91o287LvmI/CircleOutlined.js"
