@@ -28,13 +28,13 @@ function rewriteToLocal(html: string) {
 
 export async function GET() {
   try {
-    const filePath = path.resolve(process.cwd(), "..", "therealworld.net", "index.html");
+    const filePath = path.resolve(process.cwd(), "public", "site-static");
     const html = await fs.readFile(filePath, "utf8");
     const processed = rewriteToLocal(html);
     return new Response(processed, {
       headers: { "content-type": "text/html; charset=utf-8" },
     });
   } catch (e: any) {
-    return new Response(e?.message || "Failed to load", { status: 500 });
+    return new Response(e?.message || "Failed to load local mirror", { status: 500 });
   }
 }

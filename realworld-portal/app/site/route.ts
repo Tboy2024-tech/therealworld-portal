@@ -33,21 +33,13 @@ export async function GET(req: Request) {
     const preferRaw = mode === "raw";
 
     const staticPath = path.resolve(process.cwd(), "public", "site-static");
-    let html: string;
-    let fromStatic = false;
-    try {
-      html = await fs.readFile(staticPath, "utf8");
-      fromStatic = true;
-    } catch {
-      const exported = path.resolve(process.cwd(), "..", "therealworld.net", "index.html");
-      html = await fs.readFile(exported, "utf8");
-    }
+    const html = await fs.readFile(staticPath, "utf8");
 
-    const body = preferRaw || fromStatic ? html : rewriteToLocal(html);
+    const body = preferRaw ? html : rewriteToLocal(html);
     return new Response(body, {
       headers: { "content-type": "text/html; charset=utf-8", "cache-control": "no-store" },
     });
   } catch (e: any) {
-    return new Response(e?.message || "Failed to load", { status: 500 });
+    return new Response(e?.message || "Failed to load local mirror", { status: 500 });
   }
 }
